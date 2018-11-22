@@ -2,7 +2,7 @@
 Some helpful tips when dealing with Bitcooin
 
 
-### Extracting the Arbitary Text, for a Coinbase transaction, from the block height
+## Extracting the Arbitary Text, for a Coinbase transaction, from the block height
 
 *Note: The following example uses the Bitcoin SV Height 557723*
 
@@ -31,6 +31,6 @@ Some helpful tips when dealing with Bitcooin
                 01e040834a000000001976a9145adf1b1272dcfbfc2f6d3e794020c9f6d19de8b088ac00000000 // Output transaction
 ```             
                 
-Taking the String that is Arbitrary text + Extranonce1 + Extranonce2 (3337653730346f696c696733363e063311b59538f8ec0000) we can get the actual string using Node:
+Taking the String that is Arbitrary text + Extranonce1 + Extranonce2 (`3337653730346f696c696733363e063311b59538f8ec0000`) we can get the actual string using Node:
 
   `Buffer.from("3337653730346f696c696733363e063311b59538f8ec0000", 'hex').toString()`
