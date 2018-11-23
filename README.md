@@ -34,3 +34,41 @@ Some helpful tips when dealing with Bitcooin
 Taking the String that is Arbitrary text + Extranonce1 + Extranonce2 (`3337653730346f696c696733363e063311b59538f8ec0000`) we can get the actual string using Node:
 
   `Buffer.from("3337653730346f696c696733363e063311b59538f8ec0000", 'hex').toString()`
+  
+  
+### Additional Example
+
+Block Height: `557841`
+
+block hash: `000000000000000001fba6f0d7a4c125af1657779cf083df4df4041a3750ca49`
+
+coinbase transaction: `cb534040e9cf5920fce311c1828d78d8c07cb0bc426c4325160ade24412ac25a`
+
+```
+rawtransaction: 
+==================
+
+01000000 // version
+  01 // input count
+    0000000000000000000000000000000000000000000000000000000000000000ffffffff // coinbase input transaction
+    20 // size (32)
+      03 // push script (3)
+        118308 // block height in little endian
+          2f636f696e6765656b2e636f6d2f // Arbitrary text
+            6870e211b28471f22a2ecbf60300 // EN1 + EN2
+          
+          
+ffffffff // End of input transaction
+  01d053824a000000001976a914b5baa3e984b8d17af0835c1dc66815900159c11988ac00000000 // Output transaction
+```
+
+```
+Decoding Arbitrary text
+=========================
+
+Buffer.from("2f636f696e6765656b2e636f6d2f6870e211b28471f22a2ecbf60300", 'hex').toString() // '/coingeek.com/hp�\u0011��q�*.��\u0003\u0000'
+
+// /coingeek/ is 28 bytes long therefore the Arbitrary Text is '2f636f696e6765656b2e636f6d2f'
+
+Buffer.from("2f636f696e6765656b2e636f6d2f", 'hex').toString() // '/coingeek.com/'
+```
