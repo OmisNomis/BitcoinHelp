@@ -44,7 +44,7 @@ block hash: `000000000000000001fba6f0d7a4c125af1657779cf083df4df4041a3750ca49`
 
 coinbase transaction: `cb534040e9cf5920fce311c1828d78d8c07cb0bc426c4325160ade24412ac25a`
 
-```
+```js
 rawtransaction: 
 ==================
 
@@ -62,7 +62,7 @@ ffffffff // End of input transaction
   01d053824a000000001976a914b5baa3e984b8d17af0835c1dc66815900159c11988ac00000000 // Output transaction
 ```
 
-```
+```js
 Decoding Arbitrary text
 =========================
 
